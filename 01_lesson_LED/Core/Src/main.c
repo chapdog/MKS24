@@ -98,10 +98,11 @@ int main(void)
   while (1)
   {
 
-	 const  uint32_t sos = 0b10101001110111011100101010000000;
-	 	 	uint32_t mask = 1;
+	 const  uint32_t sos = 0b1010100111011101110010101;
+	 uint32_t mask = 1;
+
 	 for ( uint8_t i = 0; i < 32; ++i) {
-		 if ((sos & mask << 1 ) != 0) {
+		 if ((sos & mask << i ) != 0) {
 			 LL_GPIO_SetOutputPin(LD2_GPIO_Port, LD2_Pin);
 			 LL_mDelay(100);
 		 } else {
