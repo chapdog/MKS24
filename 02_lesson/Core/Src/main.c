@@ -90,7 +90,7 @@ static void button(){
 	}
 	old_s1 = new_s1;
 */
-static uint16_t debounce = 0xFFFF;
+	static uint16_t debounce = 0xFFFF;
 	debounce <<=1;
 
 	if (LL_GPIO_IsInputPinSet(S1_GPIO_Port, S1_Pin)){
@@ -98,8 +98,8 @@ static uint16_t debounce = 0xFFFF;
 	}
 
 	if (debounce == 0x7FFF){
-	off_time = tick + LED_TIME_LONG;
-	LL_GPIO_SetOutputPin(LED_2_GPIO_Port, LED_2_Pin);
+		off_time = tick + LED_TIME_LONG;
+		LL_GPIO_SetOutputPin(LED_2_GPIO_Port, LED_2_Pin);
 	}
 
 	if (old_s2 && !new_s2) { // falling edge
